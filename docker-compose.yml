@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  puppeteer:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./checkWorkflow.js:/opt/checkWorkflow.js
+    environment:
+      - CYBOZU_URL=https://onlinedemo.cybozu.info/scripts/office10/ag.cgi?
+      - IS_BASIC=0
+      - BASIC_ID=xxxx
+      - BASIC_PW=xxxx
+      - LOGIN_ID=17
+      - LOGIN_PW=
+      - SLACK_CHANNEL=@xxxxxxx
+      - SLACK_ENTRY_POINT=/services/xxxxxxx/xxxxxxx/xxxxxxxx
+      - LOOP_TIME=5000
+    command: sh -c "cp /opt/checkWorkflow.js /home/pptruser/. && node /home/pptruser/checkWorkflow.js"
+    tty: true
