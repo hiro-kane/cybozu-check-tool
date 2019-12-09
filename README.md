@@ -1,5 +1,10 @@
 ## 使い方
 
+```
+git clone https://github.com/hiro-kane/cybozu-check-tool.git
+cd cybozu-check-tool
+```
+
 docker-compose.ymlを以下の環境一覧を参考に参照先のサイボウズ、Slackを設定してください。
 
 **環境変数一覧**
